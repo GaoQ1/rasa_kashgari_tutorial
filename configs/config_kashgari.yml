@@ -1,0 +1,13 @@
+language: "zh"
+
+pipeline:
+- name: "rasa_nlu_gao.classifiers.kashgari_intent_classifier.KashgariIntentClassifier"
+  bert_model_path: "/Users/gaoquan/Documents/work/bert_test/rasa-bert-finetune/chinese_wwm_ext_L-12_H-768_A-12"
+  use_cudnn_cell: False
+  batch_size: 16
+  classifier_model: 'BiLSTM_Model'
+
+- name: "rasa_nlu_gao.extractors.kashgari_entity_extractor.KashgariEntityExtractor"
+  bert_model_path: "/Users/gaoquan/Documents/work/bert_test/rasa-bert-finetune/chinese_wwm_ext_L-12_H-768_A-12"
+  use_cudnn_cell: False
+

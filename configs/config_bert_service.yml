@@ -1,0 +1,23 @@
+language: "zh"
+
+pipeline:
+- name: "JiebaTokenizer"
+
+- name: "rasa_nlu_gao.featurizers.bert_vectors_featurizer.BertVectorsFeaturizer"
+  ip: '192.168.3.201'
+  port: 5555
+  port_out: 5556
+  show_server_config: True
+  timeout: 10000
+  check_version: False
+- name: "rasa_nlu_gao.classifiers.embedding_bert_intent_classifier.EmbeddingBertIntentClassifier"
+
+- name: "rasa_nlu_gao.extractors.bilstm_crf_entity_extractor.BilstmCRFEntityExtractor"
+  lr: 0.001
+  char_dim: 100
+  lstm_dim: 100
+  batches_per_epoch: 100
+  batch_size: 200
+  model_type: "bilstm"
+  dropout_keep: 0.8
+  optimizer: "adam"
