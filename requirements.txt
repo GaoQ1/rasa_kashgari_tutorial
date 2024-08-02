@@ -1,4 +1,4 @@
-keras==2.2.4
+keras==2.13.1
 rasa-nlu-gao==1.0.3 #依赖的是rasa==1.1.3
 rasa-sdk~=1.1.0
 
